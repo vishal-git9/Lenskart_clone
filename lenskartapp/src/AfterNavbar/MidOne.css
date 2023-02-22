@@ -1,0 +1,33 @@
+  
+  .parent{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .card{
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 5px;
+    display: block;
+  }
+  .image{
+    width: 95%;
+  }
+  .hoverCard{
+    display: none;
+  }
+  .card:hover+div{
+    display: block;
+    position: absolute;
+    width: 218px;
+  }
+  .card:hover{
+    border-radius: 0px 0px 0px 0px;
+  }
+  .boldText{
+    font-weight: bold;
+  }

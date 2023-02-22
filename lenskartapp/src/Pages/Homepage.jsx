@@ -157,6 +157,10 @@ export const Homepage = () => {
             <h2>COLOR CONTACT LENSES</h2>
             <Multislider data={aqualens2} slides={3} button={false}/>
         </div>
+        {/*  */}
+        <div className={styles.asSeen}>
+            <img src="https://static1.lenskart.com/media/desktop/img/Aug21/25-Aug/whatsapp.png" alt="shark tank" width={"100%"}/>
+        </div>
     </div>
   )
 }

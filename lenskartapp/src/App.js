@@ -1,10 +1,12 @@
-import './App.css';
 import { Homepage } from './Pages/Homepage';
+import './App.css';
+import Footer from './karn-component/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Homepage/>
+      <Footer/>
     </div>
   );
 }

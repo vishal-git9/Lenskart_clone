@@ -3,7 +3,7 @@ import './MidOne.css';
 const SubMidOne = ({text1, text2, text3, text4}) => {
     return (
         
-              <div style={{height:'75px',border:"1px solid #ccc", paddingBottom:'5px'}}>
+              <div style={{height:'75px',border:"1px solid #ccc", paddingBottom:'5px', background:'white'}}>
                 <div style={{height: '100%', padding: '5px'}}>
                   <div style={{display: 'flex', justifyContent: 'space-between',height:'50%'}}>
                     <p className='boldText'>{text1}</p>

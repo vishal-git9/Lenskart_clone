@@ -2,12 +2,14 @@
 
 
 .maindiv{
-    width: 90% ;
+    width: 100% ;
     height:520px ;
     background:#000042 ;
     font-family:"sans-serif";
     padding-left:95px;
-    padding-right: 95px
+    padding-right: 95px;
+    padding-top: 40px;
+    margin-top: 40px;
 }
 .bigtext{
     width: 100%;

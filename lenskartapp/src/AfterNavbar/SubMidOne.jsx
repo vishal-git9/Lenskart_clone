@@ -11,7 +11,7 @@ const SubMidOne = ({text1, text2, text3, text4}) => {
                   </div>
                   <div style={{display: 'flex', justifyContent: 'space-between',height:'50%'}}>
                     <p>{text3}</p>
-                    <p className='boldText'>{text4}</p>
+                    <p className='boldText'> {text4} </p>
                   </div>
                 </div>
               

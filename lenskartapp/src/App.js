@@ -1,11 +1,11 @@
 
 import React from 'react';
-import MidOne from './AfterNavbar/MidOne';
+import MidOne from './Components/AfterNavbar/MidOne';
 import { Homepage } from './Pages/Homepage';
 import './App.css';
  
-import DropDown from './DropDown';
-import Footer from './karn-component/Footer/Footer';
+import DropDown from './Components/DropDown';
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar/Navbar';
 
 function App() {

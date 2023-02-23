@@ -1,0 +1,43 @@
+#container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+#dropDown_nav{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 11px;
+    background-color: rgb(251,249,247);
+    font-weight: 500;
+}
+#dropDown_nav p:hover{
+    border-bottom: 2px solid rgb(13, 13, 46);
+    color: rgb(13, 13, 46);
+    cursor: pointer;
+}
+.img-right{
+    width: 5%;
+    height: 30px;
+}
+
+.hover{
+    margin-top: 30px;
+    
+}
+.parent{
+    position: absolute;
+    display: none;
+    background: white;
+    width: 100%;
+    height: auto;
+}
+.grand:hover > div{
+    display: block;
+    width: 90%;
+    margin: auto;
+    /* border: 1px solid red; */
+    left: 50px;
+    top: 50px;
+}

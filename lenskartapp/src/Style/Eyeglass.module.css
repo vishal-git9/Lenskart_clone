@@ -1,0 +1,33 @@
+.top img{ 
+    width: 1300px;
+    height: 100px;
+    background-color: red;
+}
+.bottom img {
+    margin-top: 20px;
+    width: 600px;
+    margin: auto;
+    height: 40px;
+}
+
+.slider1 div img {
+    margin-top: 20px;
+   width: 295px;
+   height: 141px;
+}
+.button{
+    width: 130px;
+    height: 40px;
+    border: 0px ;
+    font-weight: 500;
+    margin: auto;
+    margin-top: 100px;
+    font-family: sans-serif;
+    color: white;
+    background-color: rgb(59,159,169);
+}
+.img1 img{
+width: 700px;
+height: 60px;
+margin-top: 50px;
+}

@@ -1,13 +1,13 @@
 
 import './App.css';
+import EyeGlass from './Component/EyeGlass';
 import Navbar from './Component/Navbar';
-import MainRoutes from './Pages/MainRoutes';
 
 function App() {
   return (
     <div className="App">
-    <Navbar/>
-    <MainRoutes/>
+      <Navbar/>
+  <EyeGlass/>
     </div>
   );
 }

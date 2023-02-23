@@ -8,14 +8,17 @@
     text-align: center;
     background-color: #f5f5f5;
     padding: 20px 0px 20px 0px;
+    width: 99%;
+    margin: auto;
   }
   
   .card{
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-radius: 12px;
     padding: 5px;
     display: block;
     background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   }
   .image{
     width: 95%;
@@ -26,11 +29,16 @@
   .card:hover+div{
     display: block;
     position: absolute;
-    width: 218px;
+    width: 217px;
   }
   .card:hover{
     border-radius: 0px 0px 0px 0px;
+    cursor: pointer;
+    border: 1px solid #ccc;
   }
   .boldText{
     font-weight: bold;
+  }
+  .lastMenu{
+    border-radius: 0px 0px 12px 12px;
   }

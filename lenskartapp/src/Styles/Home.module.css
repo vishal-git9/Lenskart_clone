@@ -1,0 +1,91 @@
+.membership_image{
+    margin-top: 30px;
+}
+
+.eyeCard{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 60px;
+}
+.eyeCard h2{
+    font-size: 30px;
+    width: 70%;
+}
+.eyeCard>div:nth-child(2){
+    width: 70%;
+}
+
+/* as seen */
+
+.asSeen{
+    width: 100%;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.asSeen>div:nth-child(1){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.asSeen>div:nth-child(1)>div:nth-child(1){
+    width: 30%;
+    border-top: 1px solid black;
+    opacity: 0.6;
+}
+.asSeen>div:nth-child(1)>div:nth-child(3){
+    width: 30%;
+    border-top: 1px solid black;
+    opacity: 0.6;
+}
+
+.asSeen>div:nth-child(1)>h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* .asSeen */
+.asSeen>div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.asSeen>div:nth-child(2)>div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.asSeen>div:nth-child(2)>div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.asSeen>div:nth-child(2)>div:nth-child(1)>img{
+    width: 600px;
+}
+.asSeen>div:nth-child(2)>div:nth-child(2)>img{
+    width: 600px;
+}
+
+/* brands */
+
+.brands{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 60px;
+}
+.brands>div{
+    width: 100%;
+}
+.brands>h2{
+    font-size: 25px;
+    margin-left: 35px;
+}

@@ -1,0 +1,40 @@
+export const vincentData = [
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//l/i/sand-dune-full-rim-hustlr-eyeglasses_csvfile-1672134506028-g_6941_12_13_22.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//l/i/Transparent-Gold-Transparent-Full-Rim-Wayfarer-Lenskart-Air-Signia-LA-E11821-C3-Eyeglasses_lenskart-air-la-e11821-fall-rim-wfe-stais-stel-c1-eyeglasses_g_251307_02_2022.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//l/i/midnight-blue-full-rim-hustlr-eyeglasses_blue-full-rim-round-lenskart-air-classic-la-e15417-c3-eyeglasses_g_7844_24_12_2022_28_12_2022.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//l/i/amber-full-rim-hustlr-eyeglasses_peyush-bansal-shark-tank-yellow-transparent-full-rim-square-lenskart-air-air-classic-la-e15417-c2-eyeglasses_csvfile-1671778597763-air_yellow-transparent-full-rim-square-_28_12_2022.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//l/i/blue-sky-full-rim-hustlr-eyeglasses_eyeglasses_csvfile-1671778448401-air_blue-transparent-full-rim-square-lenskar_28_12_2022.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//v/i/vincent-chase-vc-e13046-c5-eyeglasses_G_9427.jpg"
+    }
+]
+export const vincentData2= [
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//v/i/black-grey-full-rim-aviator-vincent-chase-polarized-vintage-vc-s11075-c10-sunglasses_g_3370_6_02_22.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//v/i/gold-blue-gradient-full-rim-aviator-vincent-chase-polarized-vintage-vc-s11075-c12-sunglasses_g_3383_6_02_22.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//v/i/Gold-Maroon-Full-Rim-Geometric-Vincent-Chase-LIVEWIRE-VC-S14506-C1-Polarized-Sunglasses_G_7209.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//v/i/vincent-chase-vc-s14944-c1-sunglasses_g_9048_06_09_2022.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//v/i/gold-blue-gradient-full-rim-aviator-vincent-chase-polarized-vintage-vc-s11075-c12-sunglasses_g_3383_6_02_22.jpg"
+    },
+    {
+        image:"https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//v/i/vincent-chase-vc-s13820-c3-suglasses_suglasses_g_6195.jpg"
+    }
+]

@@ -1,0 +1,81 @@
+.navbar{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px  ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.top{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 98%;
+}
+::placeholder{
+    color: gray;
+    margin: 20px;
+    font-weight: 400;
+}
+.top div img {
+    width: 1000px;
+    height: 21px;
+    margin-left:20px;
+}
+.top p{
+   
+margin-left: 170px;
+font-size: 12px; 
+font-weight: 350;
+}
+.logo{
+    width:140px;
+    height: 40px;
+    margin-left:-10px;
+}
+.phone{
+    width: 130px;
+    height: 30px;
+    margin-left: 40px;
+}
+.input{
+  border: 1px solid black;
+   border-radius: 10px;
+    width: 500px;
+    height: 33px;
+    margin-left: 60px;
+    padding-left: 10px;
+}
+.Link{
+    margin-left: 45px;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 300;
+}
+.Link1{
+    margin-left:10px;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 300;
+}
+.Link2{
+    margin-left:10px;
+    text-decoration: none;
+    color: black;
+    font-size:14px;
+    font-weight: 300;
+    
+}
+.Link3{
+    margin-left:10px;
+    text-decoration: none;
+    color: black;
+    font-size:14px;
+    font-weight: 300;
+}

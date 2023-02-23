@@ -7,7 +7,7 @@ import { vincentData, vincentData2 } from '../StaticData/Vincentchase'
 import { aqualens, aqualens2 } from '../StaticData/aqualens'
 export const Homepage = () => {
   return (
-    <div>
+    <div className={styles.container}>
         <Slider/>
         <div className={styles.membership_image}>
             <img src="https://static1.lenskart.com/media/desktop/img/Feb23/23feb/PREMIUM%20BRANDS%20WEB.jpg" alt="membership" width={"100%"} />

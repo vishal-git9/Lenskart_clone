@@ -3,18 +3,20 @@ import React from 'react';
 import MidOne from './AfterNavbar/MidOne';
 import { Homepage } from './Pages/Homepage';
 import './App.css';
-import Footer from './karn-component/Footer/Footer';
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar/Navbar';
+import ProductList from './Components/products/ProductList';
 
 function App() {
   return (
     <div >
       <Navbar/>
-    <div className="App">
+    {/* <div className="App">
       <MidOne />
-      <div >
-      <Homepage/>
-      <Footer/>
+      </div >
+      <Homepage/> 
+      <Footer/> */}
+      {/* <ProductList/> */}
     </div>
   );
 }

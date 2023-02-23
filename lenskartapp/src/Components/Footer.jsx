@@ -3,11 +3,9 @@ import React from 'react';
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { FaInstagram,FaDove,FaFacebookF } from "react-icons/fa";
 // import './Footer.css'
-import styles from "../Styles/Footer.module.css"
-import {Text,Image,Box,Link } from '@chakra-ui/react';
 // import styles from "./Footer.module.css"
 import styles from "../Styles/Footer.module.css"
-import {Text,Image,Box, HStack,Heading,Link } from '@chakra-ui/react';
+import {Text,Image,Box,Link } from '@chakra-ui/react';
 const Footer = () => {
     return(
         <div>

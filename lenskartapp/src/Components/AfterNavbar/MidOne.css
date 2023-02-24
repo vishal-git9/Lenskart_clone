@@ -1,0 +1,62 @@
+  
+  .parent{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    margin: auto;
+    background-color: aqua;
+  }
+  .parent>div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-around;
+  }
+  .card>div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card{
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 5px;
+    display: block;
+    background-color: white;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  }
+  .image{
+    width: 95%;
+  }
+  .hoverCard{
+    display: none;
+    /* width: 280px; */
+    flex-direction: column;
+    /* border-radius: 12px; */
+    padding: 5px;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    
+  }
+  .card:hover+div{
+    display: block;
+    transition: 0.7s ease-in ;
+
+  }
+  .card:hover{
+    border-radius: 0px 0px 0px 0px;
+    cursor: pointer;
+    transition: 0.7s ease-in ;
+  }
+  .boldText{
+    font-weight: bold;
+  }
+  .lastMenu{
+    border-radius: 0px 0px 12px 12px;
+  }

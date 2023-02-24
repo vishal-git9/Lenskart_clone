@@ -1,0 +1,38 @@
+.top img{
+width: 600px;
+margin: auto;
+}
+.slider1 div img {
+    margin-top: 20px;
+   width: 295px;
+   height: 141px;
+   
+}
+.button{
+    width: 130px;
+    height: 40px;
+    border: 0px ;
+    font-weight: 500;
+   margin-left: 500px;
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 5px;
+    color: white;
+    background-color: rgb(59,159,169);
+}
+.button1{
+    padding-top: 5px;
+    width: 130px;
+    height: 40px;
+    color:  rgb(59,159,169);
+    font-weight: bolder;
+    text-align: center;
+    border: 1px solid  rgb(59,159,169);
+    margin-top: -40px;
+    margin-left:640px;
+}
+.img1 img{
+width: 700px;
+height: 60px;
+margin-top: 50px;
+}

@@ -8,6 +8,11 @@ import {
   Switch,
   Text,
   VStack,
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
+  AccordionItem
 } from "@chakra-ui/react";
 import { TbArrowsUpDown } from "react-icons/tb";
 import ProductTemplate from "./ProductTemplate";
@@ -63,65 +68,103 @@ const ProductList = () => {
         <Checkbox colorScheme="green">Silver ({285})</Checkbox>
         <Checkbox colorScheme="green">Green ({285})</Checkbox>
         </VStack>
-        <Select
-              border="0px"
-              borderTop="1px"
-              borderRadius="0px"
-              borderColor="gray.300"
-              p="0px"
-            >
-              <option>BRANDS</option>
-              <option> <Checkbox colorScheme="green">Silver ({285})</Checkbox></option>
-              <option><Checkbox colorScheme="green">Green ({285})</Checkbox></option>
-             
-              
-            </Select>
-        <Select
-              border="0px"
-              borderTop="1px"
-              borderRadius="0px"
-              borderColor="gray.300"
-              p="0px"
-            >
-              <option>FRAME SIZE</option>
-              <option>Price : low to high</option>
-              <option>Price : high to low</option>
-            </Select>
-        <Select
-              border="0px"
-              borderTop="1px"
-              borderRadius="0px"
-              borderColor="gray.300"
-              p="0px"
-            >
-              <option>PRICE</option>
-              <option>Price : low to high</option>
-              <option>Price : high to low</option>
-            </Select>
-        <Select
-              border="0px"
-              borderTop="1px"
-              borderRadius="0px"
-              borderColor="gray.300"
-              p="0px"
-            >
-              <option>GENDER</option>
-              <option>Price : low to high</option>
-              <option>Price : high to low</option>
-            </Select>
-        <Select
-              border="0px"
-              borderTop="1px"
-              borderBottom="1px"
-              borderRadius="0px"
-              borderColor="gray.300"
-              p="0px"
-            >
-              <option>MATERIAL</option>
-              <option>Price : low to high</option>
-              <option>Price : high to low</option>
-            </Select>
-        
+        <Accordion>
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' textAlign='left'>
+          BRAND
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+     <Checkbox > JOHN JACOBS(929)</Checkbox>
+     <Checkbox > VINCENT CHASE ONLINE(867)</Checkbox>
+     <Checkbox > VINCENT CHASE(543)</Checkbox>
+     <Checkbox > LENSKART AIR ONLINE(484)</Checkbox>
+     <Checkbox > HOOPER(265)</Checkbox>
+    
+    
+    </AccordionPanel>
+  </AccordionItem>
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' textAlign='left'>
+        FRAME SIZE
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+     <Checkbox >EXTRA NARROW(379) </Checkbox>
+     <Checkbox > NARROW(1076) </Checkbox><br />
+     <Checkbox >SMALL(2) </Checkbox><br />
+     <Checkbox >MEDIUM(2178) </Checkbox><br />
+     <Checkbox >LARGE(1) </Checkbox><br />
+     <Checkbox >WIDE(1804) </Checkbox>
+     
+    </AccordionPanel>
+  </AccordionItem>
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' textAlign='left'>
+       PRICE
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+     <Checkbox >Rs. 0 - Rs. 499 (143)</Checkbox>
+     <Checkbox >Rs. 500 - Rs. 999 (213)</Checkbox>
+     <Checkbox >Rs. 1000 - Rs. 1499 (125)</Checkbox>
+     <Checkbox >Rs. 1500 - Rs. 1999 (222)</Checkbox>
+     <Checkbox >Rs. 2000 - Rs. 2499 (101)</Checkbox>
+    </AccordionPanel>
+  </AccordionItem>
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' textAlign='left'>
+        GENDER
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+     <Checkbox >KIDS(756)</Checkbox><br />
+     <Checkbox >MEN(12)</Checkbox><br />
+     <Checkbox > UNISEX(5220)</Checkbox>
+     <Checkbox >WOMEN(926)</Checkbox><br />
+    
+     <Checkbox >TEEN(1)</Checkbox>
+    
+    </AccordionPanel>
+  </AccordionItem>
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' textAlign='left'>
+        MATERIAL
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+     <Checkbox >CELLULOSE ACETATE(661)</Checkbox>
+     <Checkbox >ACETATE & TITANIUM(31)</Checkbox>
+     <Checkbox >MEMORY METAL(12)</Checkbox>
+     <Checkbox >TR90 & ACETATE(11)</Checkbox>
+     <Checkbox >STAINLESS STEEL & TR90(149)</Checkbox>
+     <Checkbox >HIGH DENSITY ACETATE(86)</Checkbox>
+     
+    </AccordionPanel>
+  </AccordionItem>
+
+    </Accordion>
+   
       </Box>
 
       <Box

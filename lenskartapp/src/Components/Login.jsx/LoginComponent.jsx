@@ -11,20 +11,15 @@ import {
     FormControl,
     FormLabel,
     Input,
-    useDisclosure,
     Image
   } from '@chakra-ui/react';
 
 
-const LoginComponent = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
+const LoginComponent = ({isOpen,initialRef,finalRef,onClose}) => {
 
   return (
     <>
-      <Button onClick={onOpen}>Login</Button>
+      {/* <Button onClick={onOpen}>Login</Button> */}
       {/* <Button ml={4} ref={finalRef}>
         I'll receive focus on close
       </Button> */}
@@ -55,7 +50,7 @@ const LoginComponent = () => {
 
           <ModalFooter>
             <Button colorScheme='blue' mr={3}>
-              Save
+              Login
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>

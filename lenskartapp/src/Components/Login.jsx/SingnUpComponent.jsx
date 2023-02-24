@@ -10,21 +10,14 @@ import {
     Button,
     FormControl,
     FormLabel,
-    Input,
-    useDisclosure
+    Input
   } from '@chakra-ui/react';
 
 
-const SignUpComponent = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
-
+const SignUpComponent = ({isOpen,initialRef,finalRef,onClose}) => {
   return (
     <>
-      <Button onClick={onOpen}>Login</Button>
-      {/* <Button ml={4} ref={finalRef}>
+          {/* <Button ml={4} ref={finalRef}>
         I'll receive focus on close
       </Button> */}
 

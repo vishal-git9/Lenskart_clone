@@ -1,13 +1,15 @@
 import React from "react"
+import { useNavigate } from "react-router-dom";
 import './MidOne.css'
 import SubMidOne from "./SubMidOne";
 import SubMidOneLast from "./SubMidOneLast";
 
 const MidOne = () => {
+  const navigate = useNavigate()
    return <div className='parent'>
         
         <div>
-          <div className='card'>
+          <div className='card' onClick={()=> navigate("/eyeglasses")}>
             <div>
               <img src='https://static1.lenskart.com/media/desktop/img/Apr22/a2.png' alt='chasma'  className='image' />
               <p>Eyeglasses</p>
@@ -21,7 +23,7 @@ const MidOne = () => {
         </div>
         
         <div>
-          <div className='card'>
+          <div className='card' onClick={()=> navigate("/sunglasses")}>
             <div>
               <img src='https://static1.lenskart.com/media/desktop/img/Apr22/b2.png' alt='chasma'  className='image' />
               <p>Sunglasses</p>
@@ -35,7 +37,7 @@ const MidOne = () => {
         </div>
         
         <div>
-          <div className='card'>
+          <div className='card' onClick={()=> navigate("/computerglasses")}>
             <div>
               <img src='https://static1.lenskart.com/media/desktop/img/Apr22/d2.png' alt='chasma'  className='image' />
               <p>Computer Glasses</p>

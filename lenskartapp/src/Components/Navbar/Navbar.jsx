@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import style from "../../Styles/Navbar.module.css"
+import LoginComponent from '../Login.jsx/LoginComponent'
+import SignUpComponent from '../Login.jsx/SingnUpComponent'
 
 const Navbar = () => {
   return (
@@ -18,8 +20,12 @@ const Navbar = () => {
         
         <Link className={style.Link} to="/trackOrder">Track Order
         </Link>
-        <Link className={style.Link1} to="/signIn">Sign In & Sign Up
+        <LoginComponent text= 'Login' asALink={false} />
+        <SignUpComponent text='& Sign Up' asALink={false} />
+        {/* <Link className={style.Link1} to="/signIn">Sign In 
         </Link>
+        <Link className={style.Link1} to="/signIn">&Sign Up
+        </Link> */}
         <Link className={style.Link2} to="/whislist">
         
             Whislist</Link>

@@ -14,17 +14,21 @@ import {
     useDisclosure,
     Image
   } from '@chakra-ui/react';
+import SignUpComponent from './SingnUpComponent';
 
 
-const LoginComponent = () => {
+const LoginComponent = ({text, asALink}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
+  const styleObj = {
+    border:'none',background:'none', color: asALink ? 'blue' : null
+   };
 
   return (
     <>
-      <Button onClick={onOpen}>Login</Button>
+      <Button style={styleObj} onClick={onOpen}>{text}</Button>
       {/* <Button ml={4} ref={finalRef}>
         I'll receive focus on close
       </Button> */}
@@ -54,11 +58,12 @@ const LoginComponent = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button style={{width: '100%', background: '#cccccc', margin: 'auto', borderRadius: '25px', color: 'navy'}} colorScheme='blue' mr={3}>
               Save
             </Button>
-            <Button onClick={onClose}>Cancel</Button>
+            {/* <Button onClick={onClose}>Cancel</Button> */}
           </ModalFooter>
+          <SignUpComponent text='New member? Create an Account' asALink= {true}/>
         </ModalContent>
       </Modal>
       

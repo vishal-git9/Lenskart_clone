@@ -12,19 +12,21 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
-  AccordionItem
+  AccordionItem,
+  Spinner,
+  Center
 } from "@chakra-ui/react";
 import { TbArrowsUpDown } from "react-icons/tb";
 import ProductTemplate from "./ProductTemplate";
 
 import FrameType from "./FrameType";
 
-const ProductList = () => {
+const ProductList = ({data,loading}) => {
  
   return (
     <>
    
-    <Flex m="0" px="2%">
+    <Flex mt="200px" px="2%">
       <Box w="20%" m={0}>
         <Box my="20px">
           <Text fontWeight="bold" mb="3px" color="blackAlpha.600">
@@ -217,17 +219,22 @@ const ProductList = () => {
           </Flex>
         </Flex>
         <Text mt="5px" textAlign="center">
-          Showing 1 of 36 Results
+          Showing 1 of 21 Results
         </Text>
-        <Grid
+        {!loading ?(<Grid
           m="20px 10px"
           templateColumns="repeat(3, 1fr)"
           height="100vh"
           gap={6}
-        > 
-        <ProductTemplate />
-    
-        </Grid>:  
+        >
+          {data?.map((el,index)=><ProductTemplate key={index} {...el} />)}     
+        </Grid>): <Center><Spinner
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+/> </Center>}
     
       </Box>
     </Flex>

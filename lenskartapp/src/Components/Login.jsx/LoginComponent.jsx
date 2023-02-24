@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Modal,
     ModalOverlay,
@@ -16,7 +16,10 @@ import {
 
 
 const LoginComponent = ({isOpen,initialRef,finalRef,onClose}) => {
-
+  const [details,setDetails] = useState({})
+  const handleLogin = (e)=>{
+    setDetails({...details,[e.target.name]:e.target.value})
+  }
   return (
     <>
       {/* <Button onClick={onOpen}>Login</Button> */}
@@ -34,17 +37,17 @@ const LoginComponent = ({isOpen,initialRef,finalRef,onClose}) => {
         <ModalOverlay />
         <ModalContent>
             <Image src='https://static1.lenskart.com/media/desktop/img/DesignStudioIcons/DesktopLoginImage.svg' />
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader>Login to your account</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              <FormLabel>First name</FormLabel>
-              <Input ref={initialRef} placeholder='First name' />
+              <FormLabel>Email</FormLabel>
+              <Input ref={initialRef} placeholder='First name' value={details.email || ""} name='email' type={"email"} onChange={handleLogin}/>
             </FormControl>
 
             <FormControl mt={4}>
-              <FormLabel>Last name</FormLabel>
-              <Input placeholder='Last name' />
+              <FormLabel>Password</FormLabel>
+              <Input placeholder='Last name' type={"password"} value={details.password || ""} name="password" onChange={handleLogin}/>
             </FormControl>
           </ModalBody>
 

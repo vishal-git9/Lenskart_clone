@@ -73,6 +73,9 @@ font-weight: 350;
     font-size: 13px;
     font-weight: 300;
 }
+.Link1>span{
+    cursor: pointer;
+}
 .Link2{
     margin-left:10px;
     text-decoration: none;

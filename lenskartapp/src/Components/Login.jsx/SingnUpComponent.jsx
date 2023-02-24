@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Modal,
     ModalOverlay,
@@ -15,6 +15,10 @@ import {
 
 
 const SignUpComponent = ({isOpen,initialRef,finalRef,onClose}) => {
+  const [details,setDetails] = useState({})
+  const handleSignup = (e)=>{
+    setDetails({...details,[e.target.name]:e.target.value})
+  }
   return (
     <>
           {/* <Button ml={4} ref={finalRef}>
@@ -34,24 +38,24 @@ const SignUpComponent = ({isOpen,initialRef,finalRef,onClose}) => {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>First name</FormLabel>
-              <Input ref={initialRef} placeholder='First name' />
+              <Input ref={initialRef} placeholder='First name' value={details.firstName||""} name='firstName' type={"text"} onChange={handleSignup}/>
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>Last name</FormLabel>
-              <Input placeholder='Last name' />
+              <Input placeholder='Last name' name='lastName' value={details.lastName||""} type={"text"} onChange={handleSignup}/>
             </FormControl>
             <FormControl mt={4}>
               <FormLabel>Mobile No.</FormLabel>
-              <Input placeholder='Mobile' />
+              <Input placeholder='Mobile' name='Mobile' type={"number"} value={details.Mobile||""} onChange={handleSignup}/>
             </FormControl>
             <FormControl mt={4}>
               <FormLabel>Email</FormLabel>
-              <Input type='email' placeholder='Email' />
+              <Input type='email' placeholder='Email' name='email' value={details.email||""} onChange={handleSignup} />
             </FormControl>
             <FormControl mt={4}>
               <FormLabel>Password</FormLabel>
-              <Input type='password' placeholder='Password' />
+              <Input type='password' placeholder='Password' name='password' value={details.password||""} onChange={handleSignup} />
             </FormControl>
           </ModalBody>
 

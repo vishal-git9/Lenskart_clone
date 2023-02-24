@@ -13,11 +13,11 @@ const Navbar = () => {
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
   const handleSignup = ()=>{
-    setLogin(!login)
+    setLogin(false)
     onOpen()
   }
   const handleSignin = ()=>{
-    setLogin(!login)
+    setLogin(true)
     onOpen()
   }
   return (

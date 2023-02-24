@@ -13,12 +13,20 @@ import {
     Input,
     Image
   } from '@chakra-ui/react';
+import { useDispatch } from 'react-redux';
+import { getuserDetails } from '../../Redux/Authentication/auth.actions';
 
 
 const LoginComponent = ({isOpen,initialRef,finalRef,onClose}) => {
+  const dispatch = useDispatch()
   const [details,setDetails] = useState({})
   const handleLogin = (e)=>{
     setDetails({...details,[e.target.name]:e.target.value})
+  }
+  const handleLoginForm = ()=>{
+    dispatch(getuserDetails(details))
+    setDetails("")
+    onClose()
   }
   return (
     <>
@@ -52,7 +60,7 @@ const LoginComponent = ({isOpen,initialRef,finalRef,onClose}) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button colorScheme='blue' mr={3} onClick={handleLoginForm}>
               Login
             </Button>
             <Button onClick={onClose}>Cancel</Button>

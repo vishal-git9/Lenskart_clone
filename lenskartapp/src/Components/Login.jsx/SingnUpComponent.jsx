@@ -12,12 +12,21 @@ import {
     FormLabel,
     Input
   } from '@chakra-ui/react';
+import { postuserDetails } from '../../Redux/Authentication/auth.actions';
+import { useDispatch } from 'react-redux';
 
 
 const SignUpComponent = ({isOpen,initialRef,finalRef,onClose}) => {
   const [details,setDetails] = useState({})
+  const dispatch = useDispatch()
   const handleSignup = (e)=>{
     setDetails({...details,[e.target.name]:e.target.value})
+  }
+  const handleForm = (e)=>{
+    e.preventDefault()
+    dispatch(postuserDetails(details))
+    setDetails({})
+    onClose()
   }
   return (
     <>
@@ -60,7 +69,7 @@ const SignUpComponent = ({isOpen,initialRef,finalRef,onClose}) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button colorScheme='blue' mr={3} onClick={handleForm}>
               Create an Account
             </Button>
             <Button onClick={onClose}>Cancel</Button>

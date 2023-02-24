@@ -2,7 +2,6 @@
 import React from 'react';
 import MidOne from './Components/AfterNavbar/MidOne';
 import './App.css';
-import Productlist from "./Components/products/ProductList"
 import DropDown from './Components/DropDown';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar/Navbar';
@@ -16,7 +15,6 @@ function App() {
       <MidOne />
       <Allroutes/>
       <Footer/>
-      <Productlist/>
     </div>
   );
 }

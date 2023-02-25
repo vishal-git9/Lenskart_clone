@@ -1,13 +1,14 @@
 import { Box, Flex, GridItem, Image, Text } from '@chakra-ui/react'
 import { AiOutlineHeart , AiFillStar} from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const ProductTemplate = (props) => {
-  const{image,title,price,ratings,reviews,Framesize} = props
- 
+  const{id,image,title,price,ratings,reviews,Framesize} = props
+ let navigate=useNavigate()
   return (
-    <GridItem >
+    <GridItem onClick={()=>navigate(`/eyeglasses/${id}`)} >
     <Box  position="relative" border="1px solid" borderColor="gray.300" borderRadius="3%" p="10px" _hover={{boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>
         <Image m="auto" width="80%" src={image} alt={title}/>
         <Box  position="absolute" top="5px" right="5px" >

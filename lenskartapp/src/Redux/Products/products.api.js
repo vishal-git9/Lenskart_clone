@@ -1,6 +1,7 @@
 import axios from "axios"
-export const getEyeglasses = async()=>{
-    let res = await axios.get(`http://localhost:8080/Eyeglasses`)
+export const getEyeglasses = async(paramsObj)=>{
+    console.log(paramsObj)
+    let res = await axios.get(`http://localhost:8080/Eyeglasses`,paramsObj)
     return res.data
 }
 

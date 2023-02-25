@@ -20,9 +20,56 @@ import { TbArrowsUpDown } from "react-icons/tb";
 import ProductTemplate from "./ProductTemplate";
 
 import FrameType from "./FrameType";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const ProductList = ({data,loading}) => {
- 
+  const [params,setParams] = useSearchParams()
+  const Frametype = params.getAll("FrameType")
+  const Framesize = params.getAll("FrameSize")
+  const brands = params.getAll("Brand")
+  const [frameType,setframeType] = useState(Frametype || [])
+  const [frameSize,setframeSize] = useState(Framesize || [])
+  const [brand,setBrand] = useState(brands||[])
+  const handleFrameType = (value)=>{
+    let newFrameType = [...frameType]
+    if(newFrameType.includes(value)){
+      newFrameType.splice(newFrameType.indexOf(value),1)
+    }else{
+      newFrameType.push(value)
+    }
+
+    setframeType(newFrameType)
+  }
+  const handleFrameSize = (e)=>{
+    let newFrameSize = [...frameSize]
+    let value = e.target.value
+    if(newFrameSize.includes(value)){
+      newFrameSize.splice(newFrameSize.indexOf(value),1)
+    }else{
+      newFrameSize.push(value)
+    }
+
+    setframeSize(newFrameSize)
+  }
+  const handleBrand = (e)=>{
+    let newBrand = [...brand]
+    let value = e.target.value
+    if(newBrand.includes(value)){
+      newBrand.splice(newBrand.indexOf(value),1)
+    }else{
+      newBrand.push(value)
+    }
+    setBrand(newBrand)
+  }
+  useEffect(()=>{
+    const params = {
+      FrameType:frameType,
+      FrameSize:frameSize,
+      Brand:brand
+    }
+    setParams(params)
+  },[frameType,frameSize,brand])
   return (
     <>
    
@@ -36,40 +83,23 @@ const ProductList = ({data,loading}) => {
           <FrameType
             src="https://static.lenskart.com/images/cust_mailer/Eyeglass/FullRim.png"
             type="Full Rim"
+            onchange = {handleFrameType}
+            isPresent={frameType.includes("Full Rim")}
             />
           <FrameType
             src="https://static.lenskart.com/images/cust_mailer/Eyeglass/HalfRim.png"
             type="Half Rim"
+            onchange = {handleFrameType}
+            isPresent={frameType.includes("Half Rim")}
             />
           <FrameType
             src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Rimless.png"
             type="Rimless"
+            onchange = {handleFrameType}
+            isPresent={frameType.includes("Rimless")}
             />
             </Flex>
         </Box>
-        <Box mb="20px">
-          <Text fontWeight="bold" mb="3px" color="blackAlpha.600">FRAME SHAPE</Text>
-          <Grid templateColumns="repeat(3, 1fr)">
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Rectangle.png"  type="Rectangle"/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Round.png" type="Round"/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/CatEye.png" type="Cat Eye"/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Square.png" type="Square"/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Geometric.png"  type="Geometric"/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Wayfarer.png"  fil="wayfarer" type="Wayfarer"/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Aviator.png" type="Aviator"/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Hexagonal.png" type="Hexago..."/></GridItem>
-            <GridItem><FrameType src="https://static.lenskart.com/images/cust_mailer/Eyeglass/Clubmaster.png" type="Clubmas..."/></GridItem>
-          </Grid>
-        </Box>
-        <VStack mb="20px" alignItems="flex-start">
-        <Text fontWeight="bold" mb="3px" color="blackAlpha.600">FRAME COLOR</Text>
-        <Checkbox colorScheme="green">Black ({285})</Checkbox>
-        <Checkbox colorScheme="green">Blue ({285})</Checkbox>
-        <Checkbox colorScheme="green">White ({285})</Checkbox>
-        <Checkbox colorScheme="green">Gold ({285})</Checkbox>
-        <Checkbox colorScheme="green">Silver ({285})</Checkbox>
-        <Checkbox colorScheme="green">Green ({285})</Checkbox>
-        </VStack>
         <Accordion>
   <AccordionItem>
     <h2>
@@ -81,11 +111,11 @@ const ProductList = ({data,loading}) => {
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-     <Checkbox > JOHN JACOBS(929)</Checkbox>
-     <Checkbox > VINCENT CHASE ONLINE(867)</Checkbox>
-     <Checkbox > VINCENT CHASE(543)</Checkbox>
-     <Checkbox > LENSKART AIR ONLINE(484)</Checkbox>
-     <Checkbox > HOOPER(265)</Checkbox>
+     <Checkbox value={"JOHN JACOBS"} onChange={handleBrand}  isChecked={brand.includes("JOHN JACOBS")}> JOHN JACOBS(929)</Checkbox>
+     <Checkbox value={"VINCENT CHASE ONLINE"} onChange={handleBrand} isChecked={brand.includes("VINCENT CHASE ONLINE")}> VINCENT CHASE ONLINE(867)</Checkbox>
+     <Checkbox value={"VINCENT CHASE"} onChange={handleBrand} isChecked={brand.includes("VINCENT CHASE")}> VINCENT CHASE(543)</Checkbox>
+     <Checkbox value={"LENSKART AIR ONLINE"} onChange={handleBrand} isChecked={brand.includes("LENSKART AIR ONLINE")}> LENSKART AIR ONLINE(484)</Checkbox>
+     <Checkbox value={"HOOPER"} onChange={handleBrand} isChecked={brand.includes("HOOPER")}> HOOPER(265)</Checkbox>
     
     
     </AccordionPanel>
@@ -100,75 +130,17 @@ const ProductList = ({data,loading}) => {
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-     <Checkbox >EXTRA NARROW(379) </Checkbox>
-     <Checkbox > NARROW(1076) </Checkbox><br />
-     <Checkbox >SMALL(2) </Checkbox><br />
-     <Checkbox >MEDIUM(2178) </Checkbox><br />
-     <Checkbox >LARGE(1) </Checkbox><br />
-     <Checkbox >WIDE(1804) </Checkbox>
+     <Checkbox value={"Extra Narrow"} onChange={handleFrameSize} isChecked={frameSize.includes("Extra Narrow")}>EXTRA NARROW(379) </Checkbox>
+     <Checkbox value={"Narrow"} onChange={handleFrameSize} isChecked={frameSize.includes(" Narrow")}> NARROW(1076) </Checkbox><br />
+     <Checkbox value={"small"} onChange={handleFrameSize} isChecked={frameSize.includes("small")}>SMALL(2) </Checkbox><br />
+     <Checkbox  value={"medium"} onChange={handleFrameSize} isChecked={frameSize.includes("medium")}>MEDIUM(2178) </Checkbox><br />
+     <Checkbox value={"large"} onChange={handleFrameSize} isChecked={frameSize.includes("large")}>LARGE(1) </Checkbox><br />
+     <Checkbox value={"Wide"} onChange={handleFrameSize} isChecked={frameSize.includes("Wide")}>WIDE(1804) </Checkbox>
      
     </AccordionPanel>
   </AccordionItem>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-       PRICE
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-     <Checkbox >Rs. 0 - Rs. 499 (143)</Checkbox>
-     <Checkbox >Rs. 500 - Rs. 999 (213)</Checkbox>
-     <Checkbox >Rs. 1000 - Rs. 1499 (125)</Checkbox>
-     <Checkbox >Rs. 1500 - Rs. 1999 (222)</Checkbox>
-     <Checkbox >Rs. 2000 - Rs. 2499 (101)</Checkbox>
-    </AccordionPanel>
-  </AccordionItem>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-        GENDER
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-     <Checkbox >KIDS(756)</Checkbox><br />
-     <Checkbox >MEN(12)</Checkbox><br />
-     <Checkbox > UNISEX(5220)</Checkbox>
-     <Checkbox >WOMEN(926)</Checkbox><br />
-    
-     <Checkbox >TEEN(1)</Checkbox>
-    
-    </AccordionPanel>
-  </AccordionItem>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box as="span" flex='1' textAlign='left'>
-        MATERIAL
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-     <Checkbox >CELLULOSE ACETATE(661)</Checkbox>
-     <Checkbox >ACETATE & TITANIUM(31)</Checkbox>
-     <Checkbox >MEMORY METAL(12)</Checkbox>
-     <Checkbox >TR90 & ACETATE(11)</Checkbox>
-     <Checkbox >STAINLESS STEEL & TR90(149)</Checkbox>
-     <Checkbox >HIGH DENSITY ACETATE(86)</Checkbox>
-     
-    </AccordionPanel>
-  </AccordionItem>
-
     </Accordion>
-   
       </Box>
-
       <Box
         overflow="scroll"
         w="80%"

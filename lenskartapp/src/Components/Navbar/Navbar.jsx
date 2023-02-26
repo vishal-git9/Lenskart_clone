@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>}
         <div>
           <AiOutlineHeart fontWeight={"600"}/>
-        <Link className={style.Link2} to="/whislist">
+        <Link className={style.Link2} to="/wishlist">
             Whislist</Link>
             </div>
             <div>

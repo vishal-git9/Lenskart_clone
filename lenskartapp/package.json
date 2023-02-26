@@ -21,10 +21,11 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "swiper": "^9.0.5",
+    "thunk": "^0.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "server":"json-server --watch db.json --port 8080",
+    "server": "json-server --watch db.json --port 8080",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

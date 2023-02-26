@@ -4,7 +4,6 @@ import {AiOutlinePlusCircle,AiOutlineMinusCircle } from 'react-icons/ai'
 
 
 export default function CartItem(props) {
-
   const toast = useToast()
   const position = 'top left'
   function alert() {
@@ -31,7 +30,7 @@ export default function CartItem(props) {
         return (
 
 
-          <Box display="flex" gap={6} alignItems="center" bg="#fff" borderRadius='12px' p='6' boxShadow='0 1px 4px rgb(0 0 0 / 10%)' key={index.toString()}>
+          <Box display="flex" gap={6} alignItems="center" bg="#fff" borderRadius='12px' p='6' boxShadow='0 1px 4px rgb(0 0 0 / 10%)' key={el.id}>
             {/* item-product-card-image */}
             <Box w="30%">
               <a href="/" rel="noopener noreferrer">

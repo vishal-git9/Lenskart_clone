@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Text, useDisclosure, useToast } from '@chakra-ui/react';
+import { Box, Button, Center, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Heading, Text, useDisclosure, useToast } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import "../Styles/Cartpage.css"
 import { useNavigate } from 'react-router-dom';
@@ -30,7 +30,7 @@ export const Cartpage = () => {
 
   let price = 0;
   const total = () => {
-    cartData.map(el => {
+    cartData.forEach(el => {
       price += (el.price)*(el.quantity);
     })
     return price;
@@ -39,7 +39,7 @@ export const Cartpage = () => {
   let discount = 0;
   let actualPrice = 0;
   const actual = () => {
-    cartData.map(el => {
+    cartData.forEach(el => {
       actualPrice += (el.price)*(el.quantity);
     })
     discount = (actualPrice * 60) / 100;
@@ -58,9 +58,8 @@ export const Cartpage = () => {
   const [apply, setApply] = useState(false);
     return (
         <>
-          <Box w="100%" bg="rgb(251,249,247)" mt={"200px"}>
+          {cartData.length!==0?(<Box w="100%" bg="rgb(251,249,247)" mt={"200px"}>
             <CartNavbar />
-    
             {/* Content Box */}
             {loading ? < LoadingSpinner />:
             <Box className='mainContent' display="flex" flexDirection='row' w="87%" m="auto" gap={10} pb='50px'>
@@ -83,7 +82,6 @@ export const Cartpage = () => {
                   {/* item-product-card-wrapper */}
                   {/* yha pe data fetch kr ke map se render krna hai mere ko --> done*/}
                   <CartItem item={cartData} refresh={onClickDelete} update={incQuantity} updateminus={decQuantity} />
-    
                   <Box >
                     <Text
                       fontWeight='400'
@@ -284,7 +282,7 @@ export const Cartpage = () => {
                     lineHeight='24px'
                     letterSpacing='-.02em'
                     textDecoration='none!important'
-                    border='none' onClick={()=>navigate("/shiping")}
+                    border='none' onClick={()=>navigate("/shipping")}
                     >
                     Proceed To Checkout
                   </Button>
@@ -294,7 +292,7 @@ export const Cartpage = () => {
               
             </Box>
             }
-          </Box>
+          </Box>):(<Center mt={"300px"}><Heading>Empty cart</Heading></Center>)}
         </>
       );
 }

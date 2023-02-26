@@ -29,7 +29,7 @@ export const WishList = () => {
     };
 
     return (
-        <div>
+        <div style={{marginTop:"200px"}}>
         <div style={styleObj}>
             {isLoading && <h1>Loading...</h1>}
             {isError && <h1>Error...</h1>}

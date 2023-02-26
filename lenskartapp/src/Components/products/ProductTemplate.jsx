@@ -14,7 +14,7 @@ const ProductTemplate = (props) => {
 
   //const dispatch = useDispatch();
   const [color, addColor] = useState(false);
-  const{image,title,price,ratings,reviews,Framesize} = props;
+  const{image,title,price,ratings,reviews,Framesize,id} = props;
  
   const handlePostWishlit = (obj) => {
     postWishlistProducts(obj);

@@ -38,6 +38,7 @@
     /* border: 1px solid red; */
     left: 50px;
     top: 170px;
+
     z-index: 1200;
     cursor: pointer;
 }

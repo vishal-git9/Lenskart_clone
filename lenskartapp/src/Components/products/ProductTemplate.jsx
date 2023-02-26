@@ -1,17 +1,37 @@
 import { Box, Flex, GridItem, Image, Text } from '@chakra-ui/react'
+import { useState } from 'react';
 import { AiOutlineHeart , AiFillStar} from 'react-icons/ai'
 
+import { postWishlistProducts } from '../../Redux/Whislist/whis.actions';
+
+import { useNavigate } from 'react-router-dom'
+
+
+//import { useDispatch } from 'react-redux'
 
 
 const ProductTemplate = (props) => {
-  const{image,title,price,ratings,reviews,Framesize} = props
+
+  //const dispatch = useDispatch();
+  const [color, addColor] = useState(false);
+  const{image,title,price,ratings,reviews,Framesize,id} = props;
  
+  const handlePostWishlit = (obj) => {
+    postWishlistProducts(obj);
+  };
+
+
+ 
+ let navigate=useNavigate()
+
   return (
-    <GridItem >
+    <GridItem onClick={()=>navigate(`/eyeglasses/${id}`)} >
     <Box  position="relative" border="1px solid" borderColor="gray.300" borderRadius="3%" p="10px" _hover={{boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>
         <Image m="auto" width="80%" src={image} alt={title}/>
         <Box  position="absolute" top="5px" right="5px" >
-         <AiOutlineHeart  size="30px"/>
+         <AiOutlineHeart  size="30px" style={{background : color ? 'red' : null}} onClick={()=>{
+          addColor(!color);
+          handlePostWishlit(props)}}/>
         </Box>
         <Box p="10px">
           <Flex justifyContent="space-between" alignItems="center">

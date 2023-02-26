@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       <Navbar/>
       <DropDown/>
-      <MidOne />
-      <Allroutes/>
-      <Footer/>
+      <MidOne/>
+     <Allroutes/>
+     <Footer/>
     </div>
   );
 }

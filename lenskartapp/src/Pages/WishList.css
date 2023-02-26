@@ -1,0 +1,24 @@
+.btnOne{
+    border: #AED581;
+    background-color: #AED581;
+    color: white;
+    margin: 5px;
+    padding: 8px 12px 8px 12px;
+    border-radius: 5px;
+}
+.btnTwo{
+    border: red;
+    background-color: red;
+    color: white;
+    margin: '5px';
+    padding: 8px 12px 8px 12px;
+    border-radius: 5px;
+}
+.btnOne:hover{
+    background-color: navy;
+}
+.btnTwo:hover{
+    background-color: tomato;
+}
+
+

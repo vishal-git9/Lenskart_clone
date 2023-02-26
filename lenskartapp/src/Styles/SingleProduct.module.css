@@ -1,0 +1,77 @@
+.block{
+display: flex;
+gap: 30px;
+}
+.img{
+    margin-left: 100px;
+   width: 50%;
+   height: 300px;
+}
+.section2{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+.section2 h1{
+    font-size: 18px;
+    color: #999;
+}
+.section2 p{
+font-size: 20px;
+font-weight: 500;
+margin-top: 25px;
+}
+.section2 h3{
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #999;
+}
+.section2 h4{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(72,171,181);
+}
+.section2 button{
+    margin-top: 30px;
+    background-color: rgb(72,171,181);
+    width: 400px;
+    height: 65px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+}
+.img1{
+    margin-top: 30px;
+    margin-left: -30px;
+    height: 100px;
+}
+.last{
+    display: grid;
+   
+    margin-left:40px;
+    border-radius: 10px;
+    
+    grid-template-columns: repeat(2,350px);
+    grid-template-rows: repeat(2,350px);
+    gap: 20px;
+}.last img {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.last1{
+    display: grid;
+   margin-top: 50px;
+    margin-left:40px;
+    border-radius: 10px;
+    
+    grid-template-columns: repeat(2,350px);
+    grid-template-rows: repeat(2,350px);
+    gap: 20px;
+
+}
+.last1 img {
+
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

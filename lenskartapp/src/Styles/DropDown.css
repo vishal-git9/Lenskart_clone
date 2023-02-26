@@ -6,13 +6,12 @@
 }
 #dropDown_nav{
     display: flex;
-    justify-content: center;
+    align-items: center;
     justify-content: space-around;
     padding: 11px;
-    background-color: rgb(251,249,247);
     font-weight: 500;
 }
-#dropDown_nav p:hover{
+#dropDown_nav div:hover{
     border-bottom: 2px solid rgb(13, 13, 46);
     color: rgb(13, 13, 46);
     cursor: pointer;
@@ -28,7 +27,6 @@
 }
 .parent{
     position: absolute;
-    display: none;
     background: white;
     width: 100%;
     height: auto;
@@ -40,4 +38,9 @@
     /* border: 1px solid red; */
     left: 50px;
     top: 170px;
+<<<<<<< HEAD:lenskartapp/src/DropDown.css
+=======
+    z-index: 1200;
+    cursor: pointer;
+>>>>>>> d71808294201f225363181fdb017cc7d72b9a4cf:lenskartapp/src/Styles/DropDown.css
 }

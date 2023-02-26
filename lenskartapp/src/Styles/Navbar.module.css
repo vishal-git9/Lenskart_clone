@@ -2,12 +2,21 @@
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px  ;
     padding-top: 10px;
     padding-bottom: 20px;
+    font-weight: 400;
 }
 .main{
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 20px;
+    font-weight: 400;
+}
+.main>div{
+    display: flex;
+    align-items: center;
+}
+.main>div>a{
+    font-weight: 400;
 }
 .top{
     display: flex;
@@ -63,6 +72,9 @@ font-weight: 350;
     color: black;
     font-size: 13px;
     font-weight: 300;
+}
+.Link1>span{
+    cursor: pointer;
 }
 .Link2{
     margin-left:10px;

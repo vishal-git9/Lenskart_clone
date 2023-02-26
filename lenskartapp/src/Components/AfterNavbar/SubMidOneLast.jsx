@@ -1,9 +1,10 @@
 import './MidOne.css';
 
-const SubMidOne = ({text1, text2, text3, text4}) => {
+
+const SubMidOneLast = ({text1, text2, text3, text4}) => {
     return (
         
-              <div style={{height:'75px',border:"1px solid #ccc", paddingBottom:'5px', background:'white'}}>
+              <div style={{height:'75px',border:"1px solid #ccc", background:'white', borderRadius: '0px 0px 12px 12px'}}>
                 <div style={{height: '100%', padding: '5px'}}>
                   <div style={{display: 'flex', justifyContent: 'space-between',height:'50%'}}>
                     <p className='boldText'>{text1}</p>
@@ -19,4 +20,4 @@ const SubMidOne = ({text1, text2, text3, text4}) => {
     );
 };
 
-export default SubMidOne;
+export default SubMidOneLast;

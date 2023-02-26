@@ -1,22 +1,19 @@
 
 import React from 'react';
-import MidOne from './AfterNavbar/MidOne';
-import { Homepage } from './Pages/Homepage';
+import MidOne from './Components/AfterNavbar/MidOne';
 import './App.css';
- 
-import DropDown from './DropDown';
-import Footer from './karn-component/Footer/Footer';
+import DropDown from './Components/DropDown';
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar/Navbar';
-
+import { Allroutes } from './Routes/Allroutes';
+import SingleProduct from './Pages/SingleProduct';
 function App() {
   return (
+
     <div className="App">
-  
       <Navbar/>
-      <DropDown/>
-      <MidOne />
-      <Homepage/>
-      <Footer/>
+     <SingleProduct/>
+    
     </div>
   );
 }

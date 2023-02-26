@@ -49,7 +49,7 @@ export const cartReducer = (state=intialState,{type,payload})=>{
                 ...state,
                 loading:false,
                 error:false,
-                Cart:[...state.Cart,payload]
+                Cart:payload
             }
         }
         case DELETE_ITEM_ERROR:{

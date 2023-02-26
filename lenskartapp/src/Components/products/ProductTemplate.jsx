@@ -1,23 +1,32 @@
-import { Box, Flex, GridItem, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, GridItem, Image, Text, useToast } from '@chakra-ui/react'
 import { useState } from 'react';
 import { AiOutlineHeart , AiFillStar} from 'react-icons/ai'
 
-import { postWishlistProducts } from '../../Redux/Whislist/whis.actions';
+import { getWishlistProducts, postWishlistProducts } from '../../Redux/Whislist/whis.actions';
 
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
 
 
 //import { useDispatch } from 'react-redux'
 
 
 const ProductTemplate = (props) => {
-
+  const toast = useToast()
+  const dispatch = useDispatch()
   //const dispatch = useDispatch();
   const [color, addColor] = useState(false);
   const{image,title,price,ratings,reviews,Framesize,id} = props;
  
   const handlePostWishlit = (obj) => {
-    postWishlistProducts(obj);
+    dispatch(postWishlistProducts(obj))
+    toast({
+      title: 'Product added to whislist',
+      position:"top",
+      status:"success",
+      duration: 2000,
+      isClosable: true,
+    })
   };
 
 

@@ -16,7 +16,8 @@ export const Cartpage = () => {
   let loading = useSelector((store)=>store.cartState.loading)
   const dispatch = useDispatch()
   const onClickDelete = (id)=>{
-    dispatch(deleteCartProducts(id))
+    dispatch(
+      deleteCartProducts(id))
   }
   const incQuantity = (id,value)=>{
     dispatch(increaseQuantity(id,value))
@@ -30,8 +31,8 @@ export const Cartpage = () => {
 
   let price = 0;
   const total = () => {
-    cartData.forEach(el => {
-      price += (el.price)*(el.quantity);
+    cartData?.map(el => {
+        price += (el.price)*(el.quantity);
     })
     return price;
   }
@@ -39,8 +40,8 @@ export const Cartpage = () => {
   let discount = 0;
   let actualPrice = 0;
   const actual = () => {
-    cartData.forEach(el => {
-      actualPrice += (el.price)*(el.quantity);
+    cartData?.map(el => {
+        actualPrice += (el.price)*(el.quantity);
     })
     discount = (actualPrice * 60) / 100;
     return actualPrice;
@@ -58,7 +59,7 @@ export const Cartpage = () => {
   const [apply, setApply] = useState(false);
     return (
         <>
-          {cartData.length!==0?(<Box w="100%" bg="rgb(251,249,247)" mt={"200px"}>
+          {cartData.length!==0 && cartData[0]!==undefined?(<Box w="100%" bg="rgb(251,249,247)" mt={"200px"}>
             <CartNavbar />
             {/* Content Box */}
             {loading ? < LoadingSpinner />:

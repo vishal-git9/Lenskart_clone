@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import style from "../../Styles/Navbar.module.css"
 import { Avatar, Button, Flex, Menu, MenuButton, MenuDivider, MenuItem, MenuList } from '@chakra-ui/react'
@@ -9,11 +9,15 @@ import LoginComponent from '../Login.jsx/LoginComponent'
 import SignUpComponent from '../Login.jsx/SingnUpComponent'
 import { useDispatch, useSelector } from 'react-redux'
 import { logoutuserData } from '../../Redux/Authentication/auth.actions'
+import { getCartProducts } from '../../Redux/Cart/cart.actions'
+import { getWishlistProducts } from '../../Redux/Whislist/whis.actions'
 const Navbar = () => {
   const [login,setLogin] = useState(true)
   const dispatch = useDispatch()
   const isAuth = useSelector((store)=>store.authState.isAuth)
   const authData = useSelector((store)=>store.authState.authData)
+  const cartData = useSelector((store)=>store.cartState.Cart)
+  const whisData = useSelector((store)=>store.wishListReducer.wishListProducts)
   const navigate = useNavigate()
   const { isOpen,onOpen, onClose } = useDisclosure()
   const initialRef = React.useRef(null)
@@ -30,9 +34,10 @@ const Navbar = () => {
     dispatch(logoutuserData())
   }
 
-  // useEffect(()=>{
-  //   dispatch(getuserDetails(details))
-  // })
+  useEffect(()=>{
+    dispatch(getCartProducts())
+    dispatch(getWishlistProducts)
+  },[dispatch])
   return (
     <div className={style.navbar}>
         <div className={style.top}>
@@ -53,12 +58,14 @@ const Navbar = () => {
         {!isAuth&&<div className={style.Link1}><span onClick={handleSignin}>  SignIn</span>  &  <span onClick={handleSignup}>SignUp</span>
         {login?<LoginComponent isOpen={isOpen} initialRef={initialRef} finalRef={finalRef} onClose={onClose}/>:<SignUpComponent isOpen={isOpen} initialRef={initialRef} finalRef={finalRef} onClose={onClose} />}
         </div>}
-        <div>
+        <div style={{position:"relative",padding:"4px"}}>
           <AiOutlineHeart fontWeight={"600"}/>
+          <span style={{position:"absolute",top:"0px",right:"0px",left:"15px",borderRadius:"50%",width:"16px",height:"16px",backgroundColor:"#3182CE",textAlign:"center",color:"white",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"11px"}}>{whisData?.length||0}</span>
         <Link className={style.Link2} to="/wishlist">
             Whislist</Link>
             </div>
-            <div>
+            <div style={{position:"relative",padding:"4px"}}>
+            <span style={{position:"absolute",top:"0px",right:"0px",left:"15px",borderRadius:"50%",width:"16px",height:"16px",backgroundColor:"#3182CE",textAlign:"center",color:"white",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"11px"}}>{cartData?.length||0}</span>
               <GrCart/>
         <Link className={style.Link3} to="/cart">Cart
         </Link>

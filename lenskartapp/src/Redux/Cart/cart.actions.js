@@ -14,7 +14,9 @@ export const addCartProducts = (data)=>async (dispatch)=>{
     dispatch({type:ADD_TO_CART_LOADING})
     try {
         let res = await addtoCart(data)
-        dispatch({type:ADD_TO_CART_SUCCESS,payload:res})
+        let getData = await getCart()
+        console.log(data)
+        dispatch({type:ADD_TO_CART_SUCCESS,payload:getData})
     } catch {
         dispatch({type:ADD_TO_CART_ERROR})
     }

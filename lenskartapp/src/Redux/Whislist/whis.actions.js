@@ -24,9 +24,8 @@ export const getWishlistProducts = (dispatch) => {
     .catch(() => dispatch(getWishlistFailureAction()))
 };
 
-export const postWishlistProducts = (obj) => {
+export const postWishlistProducts = (obj) =>(dispatch)=> {
     axios.post("http://localhost:8080/Whislist",obj)
-    .then(() => alert('Your Product Is SuccessFully Added To The Wishlist'));
 };
 
 export const moveToCartFromWishlist = (el) => {

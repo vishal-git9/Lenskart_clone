@@ -3,17 +3,14 @@ import {
   Checkbox,
   Flex,
   Grid,
-  GridItem,
   Select,
   Switch,
   Text,
-  VStack,
   Accordion,
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
   AccordionItem,
-  Spinner,
   Center
 } from "@chakra-ui/react";
 import { TbArrowsUpDown } from "react-icons/tb";
@@ -22,6 +19,7 @@ import ProductTemplate from "./ProductTemplate";
 import FrameType from "./FrameType";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import LoadingSpinner from "../Loading";
 
 const ProductList = ({data,loading}) => {
   const [params,setParams] = useSearchParams()
@@ -200,13 +198,7 @@ const ProductList = ({data,loading}) => {
           gap={6}
         >
           {data?.map((el,index)=><ProductTemplate key={index} {...el} />)}     
-        </Grid>): <Center><Spinner
-  thickness='4px'
-  speed='0.65s'
-  emptyColor='gray.200'
-  color='blue.500'
-  size='xl'
-/> </Center>}
+        </Grid>): <Center><LoadingSpinner/> </Center>}
     
       </Box>
     </Flex>

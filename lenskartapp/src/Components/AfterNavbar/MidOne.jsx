@@ -9,7 +9,7 @@ const MidOne = () => {
    return <div className='parent'>
         
         <div>
-          <div className='card' onClick={()=> navigate("/eyeglasses")}>
+          <div className='card' onClick={()=> navigate("/Eyeglasses")}>
             <div>
               <img src='https://static1.lenskart.com/media/desktop/img/Apr22/a2.png' alt='chasma'  className='image' />
               <p>Eyeglasses</p>
@@ -23,7 +23,7 @@ const MidOne = () => {
         </div>
         
         <div>
-          <div className='card' onClick={()=> navigate("/sunglasses")}>
+          <div className='card' onClick={()=> navigate("/Sunglasses")}>
             <div>
               <img src='https://static1.lenskart.com/media/desktop/img/Apr22/b2.png' alt='chasma'  className='image' />
               <p>Sunglasses</p>
@@ -37,7 +37,7 @@ const MidOne = () => {
         </div>
         
         <div>
-          <div className='card' onClick={()=> navigate("/computerglasses")}>
+          <div className='card' onClick={()=> navigate("/Computerglasses")}>
             <div>
               <img src='https://static1.lenskart.com/media/desktop/img/Apr22/d2.png' alt='chasma'  className='image' />
               <p>Computer Glasses</p>

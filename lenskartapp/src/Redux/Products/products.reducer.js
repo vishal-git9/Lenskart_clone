@@ -63,6 +63,7 @@ export const productReducer = (state=intialState,{type,payload})=>{
         case GET_COMPUTERGLASSES_SUCCESS:{
             return{
                 ...state,
+                loading:false,
                 computerGlasses:payload
             }
         }

@@ -5,6 +5,10 @@ import CartNavbar from "../Cart/CartNavbar";
 import { useNavigate } from "react-router-dom";
 function Payment() {
   let navigate = useNavigate();
+  const handleClick = (e)=>{
+    e.preventDefault()
+    navigate("/payment")
+  }
   return (
     <div style={{marginTop:"200px"}}>
       <CartNavbar />
@@ -12,11 +16,13 @@ function Payment() {
         <div id="addres">
           <h1 id="ships">Shipping Address</h1>
           <div id="shipping-ad">
+            <form  onSubmit={handleClick}>
             <input
               type="text"
               name="First Name*"
               placeholder="First Name"
               className="input"
+              required
             />
 
             <input
@@ -24,13 +30,14 @@ function Payment() {
               name="Last Name*"
               placeholder="Last Name"
               className="input"
+              required
             />
 
             <div id="radio">
               <label>Gender</label>
-              <input type="radio" id="Male" name="Male" value="Male" />
+              <input type="radio" id="Male" name="Male" value="Male" required/>
               <label for="Male">Male</label>
-              <input type="radio" id="Female" name="Male" value="Female" />
+              <input type="radio" id="Female" name="Male" value="Female" required />
               <label for="Female">Female</label>
             </div>
 
@@ -39,6 +46,7 @@ function Payment() {
               type="number"
               name="Email"
               placeholder="Number"
+              required
             />
 
             <input
@@ -46,6 +54,7 @@ function Payment() {
               type="email"
               name="Email"
               placeholder="Email"
+              required
             />
 
             <hr />
@@ -55,12 +64,14 @@ function Payment() {
               type="text"
               name=""
               placeholder="Addresh Line 1"
+              required
             />
             <input
               className="input"
               type="text"
               name=""
               placeholder="Addresh Line 2"
+              required
             />
 
             <br />
@@ -70,12 +81,14 @@ function Payment() {
               type="text"
               name=""
               placeholder="Zip/Postal Code"
+              required
             />
             <input
               className="input"
               type="text"
               name=""
               placeholder="City/District"
+              required
             />
 
             <br />
@@ -86,19 +99,22 @@ function Payment() {
               name=""
               value="India"
               placeholder="Addresh Line 1"
+              required
             />
             <input
               className="input"
               type="text"
               name=""
               placeholder="State"
+              required
             />
 
             <br />
 
-            <p id="shiping" onClick={() => navigate("/payment")}>
+            <button id="shiping">
               CONTINUE
-            </p>
+            </button>
+            </form>
           </div>
         </div>
 

@@ -17,9 +17,10 @@ function Payment() {
               name="First Name*"
               placeholder="First Name"
               className="input"
+              required
             />
 
-            <input
+            <input required
               type="text"
               name="Last Name*"
               placeholder="Last Name"
@@ -28,20 +29,20 @@ function Payment() {
 
             <div id="radio">
               <label>Gender</label>
-              <input type="radio" id="Male" name="Male" value="Male" />
+              <input required type="radio" id="Male" name="Male" value="Male" />
               <label for="Male">Male</label>
-              <input type="radio" id="Female" name="Male" value="Female" />
+              <input required type="radio" id="Female" name="Male" value="Female" />
               <label for="Female">Female</label>
             </div>
 
-            <input
+            <input required
               className="input"
               type="number"
               name="Email"
               placeholder="Number"
             />
 
-            <input
+            <input required
               className="input"
               type="email"
               name="Email"
@@ -50,14 +51,14 @@ function Payment() {
 
             <hr />
 
-            <input
+            <input required
               className="input"
               type="text"
               name=""
               value=""
               placeholder="Addresh Line 1"
             />
-            <input
+            <input required
               className="input"
               type="text"
               name=""
@@ -67,14 +68,14 @@ function Payment() {
 
             <br />
 
-            <input
+            <input required
               className="input"
               type="text"
               name=""
               value=""
               placeholder="Zip/Postal Code"
             />
-            <input
+            <input required
               className="input"
               type="text"
               name=""
@@ -84,14 +85,14 @@ function Payment() {
 
             <br />
 
-            <input
+            <input required
               className="input"
               type="text"
               name=""
               value="India"
               placeholder="Addresh Line 1"
             />
-            <input
+            <input required
               className="input"
               type="text"
               name=""

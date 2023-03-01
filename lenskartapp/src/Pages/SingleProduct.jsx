@@ -2,18 +2,20 @@ import { Box, Button, Flex, Grid, GridItem, Image, Select, Text, useToast} from 
 import {AiOutlineHeart} from 'react-icons/ai'
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import { redirect, useNavigate, useParams } from 'react-router-dom'
+import { redirect, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addCartProducts, getCartProducts } from '../Redux/Cart/cart.actions'
 import { postWishlistProducts } from '../Redux/Whislist/whis.actions'
 
 const SingleProductPage = () => {
+  const location = useLocation()
+  console.log(location)
   const [data, setData] = useState({})
   const toast = useToast()
   const navigate = useNavigate()
   const disptach = useDispatch()
-  const {id} = useParams()
+  // const {id} = useParams()
   const addToCart=()=>{
     // setData({...data , quntity:1})
     // fetch('https://easy-pink-bull-shoe.cyclic.app/Cart',{
@@ -38,9 +40,10 @@ const SingleProductPage = () => {
     })
   }
   const fetchSingleProduct=()=>{
-    axios(`http://localhost:8080/Eyeglasses/${id}`).then(res=>setData(res.data))
+    axios(`http://localhost:8080${location.pathname}`).then(res=>setData(res.data))
      .catch(err=>console.log(err))
   }
+  console.log(data)
   useEffect(() => {
   fetchSingleProduct()
   }, [])

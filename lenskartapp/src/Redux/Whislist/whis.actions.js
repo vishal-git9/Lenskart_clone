@@ -29,6 +29,7 @@ export const postWishlistProducts = (obj) =>(dispatch)=> {
 };
 
 export const moveToCartFromWishlist = (el) => {
+    // delete (el.id)
     return axios.post(`http://localhost:8080/Cart`,el);
 };
 

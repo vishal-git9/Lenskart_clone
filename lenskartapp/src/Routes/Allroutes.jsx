@@ -16,10 +16,12 @@ export const Allroutes = () => {
     <div>
         <Routes>
             <Route path='/' element={<Homepage/>}></Route>
-            <Route path='/computerglasses' element={<ComputerGlasses/>}></Route>
-            <Route path='/eyeglasses/:id' element={<SingleProduct/>}></Route>
-            <Route path='/eyeglasses' element={<Eyeglasses/>}></Route>
-            <Route path='/sunglasses' element={<Sunglasses/>}></Route>
+            <Route path='/Computerglasses' element={<ComputerGlasses/>}></Route>
+            <Route path='/Eyeglasses/:id' element={<SingleProduct/>}></Route>
+            <Route path='/Sunglasses/:id' element={<SingleProduct/>}></Route>
+            <Route path='/Computerglasses/:id' element={<SingleProduct/>}></Route>
+            <Route path='/Eyeglasses' element={<Eyeglasses/>}></Route>
+            <Route path='/Sunglasses' element={<Sunglasses/>}></Route>
             <Route path='/cart' element={<Cartpage/>}></Route>
             <Route path='/wishlist' element={<WishList />} ></Route>
             <Route path='/shipping' element={<PrivateRoute><Payment /></PrivateRoute>} ></Route>

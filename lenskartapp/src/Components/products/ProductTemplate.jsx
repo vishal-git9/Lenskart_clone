@@ -4,7 +4,7 @@ import { AiOutlineHeart , AiFillStar} from 'react-icons/ai'
 
 import { getWishlistProducts, postWishlistProducts } from '../../Redux/Whislist/whis.actions';
 
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 
@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 
 
 const ProductTemplate = (props) => {
+  const location = useLocation()
   const toast = useToast()
   const dispatch = useDispatch()
   //const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const ProductTemplate = (props) => {
  let navigate=useNavigate()
 
   return (
-    <GridItem onClick={()=>navigate(`/eyeglasses/${id}`)} >
+    <GridItem onClick={()=>navigate(`${location.pathname}/${id}`)} >
     <Box  position="relative" border="1px solid" borderColor="gray.300" borderRadius="3%" p="10px" _hover={{boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>
         <Image m="auto" width="80%" src={image} alt={title}/>
         <Box  position="absolute" top="5px" right="5px" >
@@ -54,7 +55,6 @@ const ProductTemplate = (props) => {
           <Text mt="10px" fontWeight="bold" color="#000042"> {title} </Text>
           <Text mt="10px" fontWeight="light" color="#000042">Size : {Framesize}</Text>
           <Text mt="10px" fontWeight="bold" color="#000042">{price} <span style={{fontSize:"14px" , fontWeight:"lighter" , textDecoration:"line-through"}}>₹3999</span></Text>
-          
         </Box>
     </Box>
     </GridItem>

@@ -5,7 +5,7 @@ const WishlistTemplate = () => {
     const [wishlist, setWishlist] = React.useState([]);
 
     const wishlistdata = () => {
-        fetch('http://localhost:8080/Whislist')
+        fetch('https://lenskart-backend.onrender.com/Whislist')
         .then(res=>res.json())
         .then(data =>setWishlist(data));
     }

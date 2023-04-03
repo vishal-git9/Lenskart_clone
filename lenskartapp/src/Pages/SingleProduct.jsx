@@ -56,7 +56,7 @@ const SingleProductPage = () => {
     <Grid>
         <GridItem position="relative" p={5} colSpan={1} rowSpan={10} >
           <Text color="gray.500">{data.name}</Text>
-          <Text my="10px" fontWeight={'bold'} w="80%">Blue Block Phone & Computer Glasses: Sky Blue Transparent Full Rim Wayfarer Lenskart Blu LB E14058-C3</Text>
+          <Text my="10px" fontWeight={'bold'} w="80%">{data.title}</Text>
           <Text my="10px" fontWeight={'bold'} color="gray.600">Shap : {data.FrameShape}</Text>
           <Text my="10px" fontWeight={'bold'} fontSize="x-large">₹{data.price}</Text>
           <Button p={7} m="10px 20px" w="90%" color="white" bgColor="#00bac6" onClick={addToCart}>BUY</Button>

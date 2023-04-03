@@ -40,7 +40,7 @@ const SingleProductPage = () => {
     })
   }
   const fetchSingleProduct=()=>{
-    axios(`http://localhost:8080${location.pathname}`).then(res=>setData(res.data))
+    axios(`https://lenskart-backend.onrender.com${location.pathname}`).then(res=>setData(res.data))
      .catch(err=>console.log(err))
   }
   console.log(data)

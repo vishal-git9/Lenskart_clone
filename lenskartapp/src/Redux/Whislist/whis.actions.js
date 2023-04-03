@@ -19,22 +19,22 @@ export const getWishlistFailureAction = () => {
 
 export const getWishlistProducts = (dispatch) => {
     dispatch(getWishlistRequestAction());
-    axios.get(" http://localhost:8080/Whislist")
+    axios.get(" https://lenskart-backend.onrender.com/Whislist")
     .then((res) => dispatch(getWishlistSuccessAction(res.data)))
     .catch(() => dispatch(getWishlistFailureAction()))
 };
 
 export const postWishlistProducts = (obj) =>(dispatch)=> {
-    axios.post("http://localhost:8080/Whislist",obj)
+    axios.post("https://lenskart-backend.onrender.com/Whislist",obj)
 };
 
 export const moveToCartFromWishlist = (el) => {
-    // delete (el.id)
-    return axios.post(`http://localhost:8080/Cart`,el);
+    delete (el.id)
+    return axios.post(`https://lenskart-backend.onrender.com/Cart`,el);
 };
 
 export const removeFromWishList = (id) => {
-    return axios.delete(`http://localhost:8080/Whislist/${id}`);
+    return axios.delete(`https://lenskart-backend.onrender.com/Whislist/${id}`);
 };
 
 

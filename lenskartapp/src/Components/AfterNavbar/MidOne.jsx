@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
-import './MidOne.css'
+import '../../Styles/MidOne.css'
 import SubMidOne from "./SubMidOne";
 import SubMidOneLast from "./SubMidOneLast";
 

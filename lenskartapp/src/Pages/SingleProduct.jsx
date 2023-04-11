@@ -1,31 +1,20 @@
 import { Box, Button, Flex, Grid, GridItem, Image, Select, Text, useToast} from '@chakra-ui/react'
 import {AiOutlineHeart} from 'react-icons/ai'
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import axios from 'axios'
-import { redirect, useLocation, useNavigate, useParams } from 'react-router-dom'
+import {useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addCartProducts, getCartProducts } from '../Redux/Cart/cart.actions'
+import { addCartProducts } from '../Redux/Cart/cart.actions'
 import { postWishlistProducts } from '../Redux/Whislist/whis.actions'
 
 const SingleProductPage = () => {
   const location = useLocation()
-  console.log(location)
   const [data, setData] = useState({})
   const toast = useToast()
   const navigate = useNavigate()
   const disptach = useDispatch()
-  // const {id} = useParams()
   const addToCart=()=>{
-    // setData({...data , quntity:1})
-    // fetch('https://easy-pink-bull-shoe.cyclic.app/Cart',{
-    //   method:"POST",
-    //   headers:{
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(data)
-    // }).then(res=>navigate("/cart"))
-    // .catch(err=>navigate("/cart"))
     disptach(addCartProducts(data))
     navigate("/cart")
   }
@@ -39,14 +28,14 @@ const SingleProductPage = () => {
       isClosable: true,
     })
   }
-  const fetchSingleProduct=()=>{
-    axios(`https://lenskart-backend.onrender.com${location.pathname}`).then(res=>setData(res.data))
-     .catch(err=>console.log(err))
-  }
+  const fetchSingleProduct=useCallback(()=>{
+      axios(`https://lenskart-backend.onrender.com${location.pathname}`).then(res=>setData(res.data))
+       .catch(err=>console.log(err))
+  },[location.pathname])
   console.log(data)
   useEffect(() => {
   fetchSingleProduct()
-  }, [])
+  }, [fetchSingleProduct])
   return (
     <>
     <Flex m={5} flexDirection={"row"} mt="200px">

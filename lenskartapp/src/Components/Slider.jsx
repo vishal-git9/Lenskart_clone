@@ -3,6 +3,8 @@ import { Autoplay,Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css";
+
+
 export const Slider = () => {
   return (
     <>

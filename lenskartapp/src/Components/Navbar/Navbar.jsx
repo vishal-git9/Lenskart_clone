@@ -92,9 +92,7 @@ const Navbar = () => {
               </MenuList>
             </Menu>
           </Flex>):""}
-        </div>
-     
-
+        </div>s
     </div>
   )
 }

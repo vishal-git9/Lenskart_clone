@@ -3,7 +3,7 @@ import React from "react";
 import CartNavbar from "../Cart/CartNavbar";
 import CartItem from "./Cartitem";
 import "../../Styles/pay.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 const Card = () => {
   let Navigate = useNavigate();
   return (

@@ -1,21 +1,15 @@
 import { Box, Flex, GridItem, Image, Text, useToast } from '@chakra-ui/react'
 import { useState } from 'react';
 import { AiOutlineHeart , AiFillStar} from 'react-icons/ai'
-
-import { getWishlistProducts, postWishlistProducts } from '../../Redux/Whislist/whis.actions';
-
+import {postWishlistProducts } from '../../Redux/Whislist/whis.actions';
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-
-
-//import { useDispatch } from 'react-redux'
 
 
 const ProductTemplate = (props) => {
   const location = useLocation()
   const toast = useToast()
   const dispatch = useDispatch()
-  //const dispatch = useDispatch();
   const [color, addColor] = useState(false);
   const{image,title,price,ratings,reviews,Framesize,id} = props;
  

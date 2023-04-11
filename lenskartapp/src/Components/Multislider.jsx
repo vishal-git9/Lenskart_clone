@@ -1,12 +1,11 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import {Navigation} from "swiper"
-// import required modules
 import { Eyecard } from './Eyecard';
+
+
 export const Multislider = ({data,slides,button}) => {
   return (
     <div>

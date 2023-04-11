@@ -15,7 +15,6 @@ import {
 import { postuserDetails } from '../../Redux/Authentication/auth.actions';
 import { useDispatch } from 'react-redux';
 
-
 const SignUpComponent = ({isOpen,initialRef,finalRef,onClose}) => {
   const [details,setDetails] = useState({})
   const dispatch = useDispatch()
@@ -30,10 +29,6 @@ const SignUpComponent = ({isOpen,initialRef,finalRef,onClose}) => {
   }
   return (
     <>
-          {/* <Button ml={4} ref={finalRef}>
-        I'll receive focus on close
-      </Button> */}
-
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}

@@ -1,12 +1,10 @@
 import { useToast } from '@chakra-ui/react'
-import React from 'react'
 import { useSelector } from 'react-redux'
-import { Navigate, useLocation } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 export const PrivateRoute = ({children}) => {
   const isAuth = useSelector((store)=>store.authState.isAuth)
-  const location  = useLocation()
   const toast = useToast()
+  const navigate = useNavigate()
   if(!isAuth){
     return(
       toast({
@@ -16,10 +14,9 @@ export const PrivateRoute = ({children}) => {
         status:"error",
         duration: 2000,
         isClosable: true,
-      })
-    // <Navigate state={location.pathname} to={location.pathname}/>
+      }),
+      navigate(-1)
     )
   }
-
   return children
 }

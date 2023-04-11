@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Image,Divider } from '@chakra-ui/react'
-import { useState, useEffect } from 'react';
+import {useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCartProducts } from '../../Redux/Cart/cart.actions';
 
@@ -8,10 +8,13 @@ export default function CartItem() {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getCartProducts())
-    }, [])
+    }, [dispatch])
 
     let total=0;
 
+    cartData.forEach(el => {
+        total+=el.price*el.quantity
+    });
 
     return (
         <>
@@ -24,9 +27,7 @@ export default function CartItem() {
                 <Box className='itemPart' border='1px solid #ccc' >
 
                     {cartData.map(el => {
-                        {total+=el.price*el.quantity}
                         return (
-
                             <Box key={el.id}>
                             
                             <Box className='item_container' display='flex' flexDirection='row' gap={5}

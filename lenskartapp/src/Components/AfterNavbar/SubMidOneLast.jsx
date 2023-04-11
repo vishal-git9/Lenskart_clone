@@ -1,4 +1,4 @@
-import './MidOne.css';
+import '../../Styles/MidOne.css';
 
 
 const SubMidOneLast = ({text1, text2, text3, text4}) => {

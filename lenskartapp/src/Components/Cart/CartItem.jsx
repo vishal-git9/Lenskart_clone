@@ -14,15 +14,6 @@ export default function CartItem(props) {
       status: 'error',
     })
   }
-  //   async function handleDelete(id) {
-  //     let g= await fetch(`https://easy-pink-bull-shoe.cyclic.app/Cart/${id}`, {
-  //         method: "DELETE",
-  //         body: JSON.stringify(props.item),
-  //         headers: { 'Content-Type': "application/json" }
-  //     })
-  //     await g.json()
-  //     props.refresh()
-  // }
   return (
     <>
       {props.item.map((el, index) => {

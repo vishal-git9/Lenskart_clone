@@ -50,7 +50,7 @@ export const Cartpage = () => {
 
   let price = 0;
   const total = () => {
-    cartData?.map((el) => {
+    cartData?.forEach((el) => {
       price += el.price * el.quantity;
     });
     return price;
@@ -59,7 +59,7 @@ export const Cartpage = () => {
   let discount = 0;
   let actualPrice = 0;
   const actual = () => {
-    cartData?.map((el) => {
+    cartData?.forEach((el) => {
       actualPrice += el.price * el.quantity;
     });
     discount = (actualPrice * 60) / 100;
@@ -179,7 +179,7 @@ export const Cartpage = () => {
                           priceTitle={"Total payable"}
                           price={
                             apply
-                              ? "₹" + (actual() - discount)
+                              ? "₹" + (Math.floor(actual() - discount))
                               : "₹" + (actual() + 269.82)
                           }
                         />
